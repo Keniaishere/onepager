@@ -1,0 +1,82 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Light and Dark Mode Variables */
+:root {
+    --bg-color-light: #f9f9f9;
+    --text-color-light: #333;
+    --bg-color-dark: #1e1e1e;
+    --text-color-dark: #f9f9f9;
+    --logo-light: #0078D7; /* Blue */
+    --logo-dark: #F44336; /* Red */
+}
+
+body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background 0.5s, color 0.5s;
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0078D7;
+    color: white;
+}
+
+header button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    color: #0078D7;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Sections */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+/* Logo Container */
+#logo-container {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: var(--logo-light);
+    transition: background 0.5s;
+}
+
+body.dark-mode #logo-container {
+    background-color: var(--logo-dark);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #0078D7;
+    color: white;
+}
