@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative Logos - Melbourne's M</title>
+    <title>Generative Logos</title>
     <style>
         /* General Reset */
         * {
@@ -12,26 +12,22 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            transition: background-color 0.5s, color 0.5s;
-        }
-
-        /* Light and Dark Theme Variables */
+        /* Light and Dark Mode Variables */
         :root {
             --bg-light: #f9f9f9;
             --text-light: #333;
             --bg-dark: #1e1e1e;
             --text-dark: #f9f9f9;
-            --logo-light: #0078D7;
-            --logo-dark: #F44336;
+            --primary-color: #00A8E8;
+            --secondary-color: #F44336;
         }
 
         body {
+            font-family: 'Arial', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-light);
-            text-align: center;
+            transition: background-color 0.5s, color 0.5s;
+            overflow: hidden;
         }
 
         body.dark {
@@ -39,133 +35,133 @@
             color: var(--text-dark);
         }
 
-        /* Header and Footer */
-        header, footer {
-            padding: 20px;
-            background: linear-gradient(135deg, #0078D7, #005bb5);
-            color: white;
+        /* Centered Content */
+        #content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
         }
 
-        h1, h2 {
-            margin-bottom: 10px;
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
-        /* Theme Toggle Button */
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
         button {
-            margin-top: 10px;
             padding: 10px 20px;
+            font-size: 1rem;
             border: none;
-            background-color: white;
-            color: #0078D7;
-            font-weight: bold;
-            border-radius: 5px;
+            background-color: var(--primary-color);
+            color: white;
             cursor: pointer;
+            border-radius: 5px;
             transition: background 0.3s;
         }
 
         button:hover {
-            background-color: #e6e6e6;
+            background-color: var(--secondary-color);
         }
 
-        /* Logo Container */
-        #logo-container {
-            margin: 30px auto;
-            width: 150px;
-            height: 150px;
-        }
-
-        svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Logo Shape */
-        #m-shape {
-            fill: var(--logo-light);
-            transition: fill 0.5s, transform 0.5s;
-        }
-
-        body.dark #m-shape {
-            fill: var(--logo-dark);
-        }
-
-        /* Hover Animation */
-        #m-shape:hover {
-            transform: scale(1.1);
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 20px;
+        /* Fullscreen Canvas */
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
+    <!-- Content -->
+    <div id="content">
         <h1>Generative Logos</h1>
-        <p>Explore Melbourne's dynamic "M" logo that adapts to light, dark, and time.</p>
-        <button id="toggle-theme">Toggle Light/Dark Mode</button>
-    </header>
+        <p>An interactive, generative example inspired by Melbourne's dynamic design.</p>
+        <button id="theme-toggle">Toggle Light/Dark Mode</button>
+    </div>
 
-    <!-- Main Content -->
-    <main>
-        <section>
-            <h2>What is a Generative Logo?</h2>
-            <p>
-                Generative logos adapt dynamically to time, context, or interaction. Melbourne's "M" logo is an 
-                excellent example, changing colors based on its surroundings.
-            </p>
-        </section>
-
-        <!-- Interactive Logo -->
-        <section id="logo-demo">
-            <h2>Dynamic "M" Logo</h2>
-            <div id="logo-container">
-                <!-- SVG Melbourne "M" Logo -->
-                <svg id="m-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <polygon id="m-shape" points="10,10 50,90 90,10 70,10 50,70 30,10" />
-                </svg>
-            </div>
-            <p>Watch the logo adapt to your theme and time of day!</p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>Created with generative design principles. Experiment and explore!</p>
-    </footer>
+    <!-- Fullscreen Canvas -->
+    <canvas id="canvas"></canvas>
 
     <!-- JavaScript -->
     <script>
-        // Theme Toggle Button
-        const themeToggle = document.getElementById('toggle-theme');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        const logo = document.getElementById('m-shape');
 
-        // Toggle Light/Dark Mode
+        // Set Canvas Size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Handle Window Resize
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawGenerativeLogo();
+        });
+
+        // Light/Dark Mode Toggle
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark');
         });
 
-        // Update Logo Color Based on Time of Day
-        function updateLogoColor() {
-            const currentHour = new Date().getHours();
+        // Function to Generate Dynamic "M" Logo
+        function drawGenerativeLogo() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
 
-            if (currentHour >= 6 && currentHour < 12) {
-                // Morning: Yellow
-                logo.style.fill = '#FFEB3B';
-            } else if (currentHour >= 12 && currentHour < 18) {
-                // Afternoon: Blue
-                logo.style.fill = '#03A9F4';
-            } else {
-                // Evening/Night: Dark Purple
-                logo.style.fill = '#673AB7';
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const time = new Date().getHours();
+
+            // Determine Logo Colors Based on Time
+            const colors = (time >= 6 && time < 18) ? ['#00A8E8', '#0077B6', '#CAF0F8'] : ['#F44336', '#900D0D', '#FFABAB'];
+
+            // Draw M-Like Generative Logo
+            for (let i = 0; i < 12; i++) {
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.lineTo(
+                    centerX + Math.cos(i * Math.PI / 6) * 150,
+                    centerY + Math.sin(i * Math.PI / 6) * 150
+                );
+                ctx.strokeStyle = colors[i % colors.length];
+                ctx.lineWidth = Math.random() * 5 + 1;
+                ctx.stroke();
+                ctx.closePath();
             }
         }
 
-        // Call the function to set the logo color when the page loads
-        updateLogoColor();
+        // Animate the Logo on Mouse Move
+        window.addEventListener('mousemove', (e) => {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < 8; i++) {
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, (mouseX + mouseY) / 20 - i * 10, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(${255 - i * 30}, ${100 + i * 20}, ${150 + i * 10}, 0.5)`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+                ctx.closePath();
+            }
+        });
+
+        // Initial Draw
+        drawGenerativeLogo();
     </script>
 </body>
 </html>
