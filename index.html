@@ -7,36 +7,43 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Page Header -->
+    <!-- Header -->
     <header>
-        <h1>Generative Logos: Melbourne's "M" in Action</h1>
-        <p>Explore how generative logos adapt and evolve in different contexts.</p>
+        <h1>Generative Logos</h1>
+        <p>Explore the dynamic Melbourne "M" Logo.</p>
         <button id="toggle-theme">Toggle Light/Dark Mode</button>
     </header>
 
-    <!-- Content Section -->
+    <!-- Main Content -->
     <main>
         <section>
-            <h2>What are Generative Logos?</h2>
-            <p>Generative logos are dynamic visual identities that adapt based on different inputs like time, location, or context. One well-known example is Melbourne's "M" logo, which changes patterns and colors while maintaining its recognizable form.</p>
+            <h2>What is a Generative Logo?</h2>
+            <p>
+                Generative logos are adaptable designs that change based on time, context, or interaction. 
+                Melbourne's "M" logo is an example of this dynamic branding.
+            </p>
         </section>
 
-        <!-- Interactive Logo Section -->
-        <section id="logo-section">
-            <h2>Interactive Melbourne "M" Logo</h2>
+        <!-- Interactive Logo -->
+        <section id="logo-demo">
+            <h2>Dynamic "M" Logo</h2>
             <div id="logo-container">
-                <!-- SVG or div representing the logo -->
-                <div id="melbourne-logo"></div>
+                <!-- SVG Logo -->
+                <svg id="m-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- M Shape -->
+                    <polygon id="m-shape" points="10,10 50,90 90,10 70,10 50,70 30,10" />
+                </svg>
             </div>
-            <p>The logo above changes based on the time of day and theme (light/dark mode).</p>
+            <p>The logo adapts to time of day and theme.</p>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>Learn more about generative design and modern branding!</p>
+        <p>Designed with generative principles in mind.</p>
     </footer>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
