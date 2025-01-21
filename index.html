@@ -26,48 +26,55 @@
             scroll-behavior: smooth;
         }
 
-        section {
+       
+        .grid-section {
             min-height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            padding: 2vh 4%;
             background-color: #fff;
         }
 
-        .grid-section {
-            padding: 2vh 4%;
-        }
-
         .text-section {
-            padding: 0 8%;
-            background-color: #f8f8f8;
+            min-height: 100vh;
+            padding: 5vh 5%;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .big-text {
-            font-size: 4.5rem;
+            font-size: 8vw;
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 5vh;
+            text-align: center;
+            margin-bottom: 10vh;
         }
 
         .text-columns {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-top: 60px;
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .column {
+            text-align: center;
+            padding: 20px;
         }
 
         .column h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
             font-weight: 600;
         }
 
         .column p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            opacity: 0.9;
         }
         
 
@@ -120,25 +127,27 @@
 
             <!-- Add your other 11 GIFs here -->
         </div>
-        <section class="text-section">
-            <div class="big-text">
-                GENERATIVE<br>
-                IDENTITIES<br>
-                EXPLAINED
-            </div>
-            <div class="text-columns">
-                <div class="column">
-                    <h3>DYNAMIC</h3>
-                    <p>These identities showcase how brands create flexible, living systems that adapt and evolve while maintaining recognition.</p>
+            <section class="text-section">
+                <div class="big-text">
+                    GENERATIVE<br>
+                    IDENTITIES<br>
+                    EXPLAINED
                 </div>
-                <div class="column">
-                    <h3>SYSTEMATIC</h3>
-                    <p>Built on carefully crafted algorithms and design systems, these logos respond to data and interaction in meaningful ways.</p>
+                <div class="text-columns">
+                    <div class="column">
+                        <h3>DYNAMIC</h3>
+                        <p>These dynamic logos showcase how brands create flexible, living identities through generative design systems.</p>
+                    </div>
+                    <div class="column">
+                        <h3>SYSTEMATIC</h3>
+                        <p>Not AI, but rather carefully crafted algorithms that respond to data, interaction, or other variables to create endless unique variations.</p>
+                    </div>
+                    <div class="column">
+                        <h3>RECOGNITION</h3>
+                        <p>While maintaining brand recognition, these systems allow for adaptable and evolving visual expressions of brand identity.</p>
+                    </div>
                 </div>
-                <div class="column">
-                    <h3>AUTHENTIC</h3>
-                    <p>Unlike AI-generated content, these are intentionally designed systems that express genuine brand values and personality.</p>
-                </div>
+            </section>
     </div>
 </body>
 </html>
