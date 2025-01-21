@@ -2,62 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dynamic Logo Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one page</title>
     <style>
-        .generator-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
         }
-        
-        .controls {
+
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #fff;
+            padding: 4% 8%;
+        }
+
+        .gif-grid {
             display: grid;
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            width: 100%;
         }
-        
-        .preview-area {
-            min-height: 300px;
-            border: 1px solid #ccc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+
+        .gif-item {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: contain;
+            background-color: #fff;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .gif-item:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .gif-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="generator-container">
-        <h1>Logo Generator</h1>
-        
-        <div class="controls">
-            <div>
-                <h3>Language</h3>
-                <select id="language">
-                    <option value="en">English</option>
-                    <option value="de">German</option>
-                </select>
-            </div>
-            
-            <div>
-                <h3>Style</h3>
-                <select id="style">
-                    <option value="colored">Coloured (for light backgrounds)</option>
-                    <option value="white">White (for dark backgrounds)</option>
-                </select>
-            </div>
-            
-            <div>
-                <h3>Temperature</h3>
-                <input type="range" id="temperature" min="-20" max="30" value="10">
-                <span id="temp-value">10°C</span>
-            </div>
+    <div class="hero">
+        <div class="gif-grid">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/refs/heads/main/ocad-logo-generatif.gif" class="gif-item">
+            <img src="https://github.com/Keniaishere/onepager/blob/main/Aoi.gif" class="gif-item">
+        <img src="https://github.com/Keniaishere/onepager/blob/main/Brooklyn-Museum-1.gif" class="gif-item">
+        <img src="https://github.com/Keniaishere/onepager/blob/main/designacademyeindhoven.gif"  class="gif-item">
+        <img src="https://github.com/Keniaishere/onepager/blob/main/edp.gif"  calss="gif-item">
+        <img scr="https://github.com/Keniaishere/onepager/blob/main/expatcenter.gif" class="gif-item">
+        <img scr="https://github.com/Keniaishere/onepager/blob/main/idtv.gif" class="gif-item">
+        <img scr="https://github.com/Keniaishere/onepager/blob/main/imagine8.gif" class="gif-item">
+        <img scr="https://github.com/Keniaishere/onepager/blob/main/melbroune.gif" clas="gif-item">
+        <img scr="https://github.com/Keniaishere/onepager/blob/main/mitmedialab.gif" class="gif-item">
+        <img src="https://github.com/Keniaishere/onepager/blob/main/pantonehotel.gif" class="gif-item">
+        <img src="https://github.com/Keniaishere/onepager/blob/main/tvasahi.gif" class="gif-item">
+
+            <!-- Add your other 11 GIFs here -->
         </div>
-        
-        <div class="preview-area" id="preview">
-            <!-- Logo will be rendered here -->
-        </div>
-        
-        <button id="download">Download Image</button>
     </div>
 </body>
 </html>
