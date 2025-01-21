@@ -41,59 +41,43 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 100%;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        .text-columns {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    @media (max-width: 768px) {
-        .text-section {
-            padding: 5vh 20px;
-            min-height: auto; /* Allow section to expand with content */
-        }
-
-        .text-columns {
-            grid-template-columns: 1fr; /* Single column on mobile */
-            width: 100%;
-            gap: 40px;
-            padding: 0;
         }
 
         .big-text {
-            font-size: 3rem; /* Fixed font size for mobile */
-            margin-bottom: 50px;
-            width: 100%;
-            word-wrap: break-word;
+            font-size: 8vw;
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: center;
+            margin-bottom: 10vh;
+        }
+
+        .text-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .column {
-            width: 100%;
-            padding: 0;
-            margin-bottom: 30px;
+            text-align: center;
+            padding: 20px;
         }
 
         .column h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
         }
 
         .column p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             line-height: 1.5;
-            padding: 0;
-            margin: 0 auto;
-            max-width: 90%;
+            opacity: 0.9;
         }
-        
 
+        /* Your existing grid styles remain the same */
         .gif-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -105,61 +89,18 @@
             width: 100%;
             height: 20vh;
             object-fit: contain;
-            background-color: #fff;
             padding: 8px;
             transition: transform 0.3s ease;
-            display:block;
         }
-    }
-
-        
 
         @media (max-width: 768px) {
-            .gif-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
+            .text-columns {
+                grid-template-columns: 1fr;
             }
-
-            .gif-item {
-            height: 25vh;
+            .big-text {
+                font-size: 12vw;
+            }
         }
-
-        .big-text {
-            font-size: 12vw;
-            margin-bottom: 8vh;
-            padding: 0 15px;
-        }
-
-        .column {
-            text-align: center;  /* Keeps text centered on mobile */
-            padding: 0 20px;     /* Added horizontal padding */
-        }
-
-        .column h3 {
-            font-size: 1.5rem;   /* Slightly smaller headers on mobile */
-            margin-bottom: 15px;
-        }
-
-        .column p {
-            font-size: 1.1rem;   /* Slightly smaller text on mobile */
-            padding: 0 10px;
-        }
-        .text-section {
-            padding: 5vh 3%;  /* Adjusted padding for mobile */
-        }
-
-
-        /* Additional breakpoint for very small devices */
-    @media (max-width: 480px) {
-        .big-text {
-            font-size: 2.5rem;
-        }
-
-        .column h3 {
-            font-size: 1.8rem;
-        }
-    }
-}
     </style>
 </head>
 <body>
