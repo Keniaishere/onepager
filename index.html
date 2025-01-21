@@ -3,165 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Generative Logos</title>
+    <title>one page</title>
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
         }
 
-        /* Light and Dark Mode Variables */
-        :root {
-            --bg-light: #f9f9f9;
-            --text-light: #333;
-            --bg-dark: #1e1e1e;
-            --text-dark: #f9f9f9;
-            --primary-color: #00A8E8;
-            --secondary-color: #F44336;
+        .hero{
+            min-height: 100vh;
+            width: 100%;
+            background-color: #fff;
+            background-image: url(https://raw.githubusercontent.com/Keniaishere/onepager/refs/heads/main/ocad-logo-generatif.gif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 70%;
+            color: #000;
+            padding: 0 8%;
         }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-light);
-            transition: background-color 0.5s, color 0.5s;
-            overflow: hidden;
-        }
-
-        body.dark {
-            background-color: var(--bg-dark);
-            color: var(--text-dark);
-        }
-
-        /* Centered Content */
-        #content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 10;
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            border: none;
-            background-color: var(--primary-color);
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: var(--secondary-color);
-        }
-
-        /* Fullscreen Canvas */
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-        }
-    </style>
-</head>
-<body>
-    <!-- Content -->
-    <div id="content">
-        <h1>Generative Logos</h1>
-        <p>An interactive, generative example inspired by Melbourne's dynamic design.</p>
-        <button id="theme-toggle">Toggle Light/Dark Mode</button>
-    </div>
-
-    <!-- Fullscreen Canvas -->
-    <canvas id="canvas"></canvas>
-
-    <!-- JavaScript -->
-    <script>
-        const canvas = document.getElementById('canvas');
-        const ctx = canvas.getContext('2d');
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        // Set Canvas Size
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // Handle Window Resize
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            drawGenerativeLogo();
-        });
-
-        // Light/Dark Mode Toggle
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark');
-        });
-
-        // Function to Generate Dynamic "M" Logo
-        function drawGenerativeLogo() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            const time = new Date().getHours();
-
-            // Determine Logo Colors Based on Time
-            const colors = (time >= 6 && time < 18) ? ['#00A8E8', '#0077B6', '#CAF0F8'] : ['#F44336', '#900D0D', '#FFABAB'];
-
-            // Draw M-Like Generative Logo
-            for (let i = 0; i < 12; i++) {
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.lineTo(
-                    centerX + Math.cos(i * Math.PI / 6) * 150,
-                    centerY + Math.sin(i * Math.PI / 6) * 150
-                );
-                ctx.strokeStyle = colors[i % colors.length];
-                ctx.lineWidth = Math.random() * 5 + 1;
-                ctx.stroke();
-                ctx.closePath();
-            }
-        }
-
-        // Animate the Logo on Mouse Move
-        window.addEventListener('mousemove', (e) => {
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < 8; i++) {
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, (mouseX + mouseY) / 20 - i * 10, 0, Math.PI * 2);
-                ctx.strokeStyle = `rgba(${255 - i * 30}, ${100 + i * 20}, ${150 + i * 10}, 0.5)`;
-                ctx.lineWidth = 2;
-                ctx.stroke();
-                ctx.closePath();
-            }
-        });
-
-        // Initial Draw
-        drawGenerativeLogo();
-    </script>
+</style>
+       </head>
+        <body>
+        <div class="hero">
+        </div>
 </body>
 </html>
