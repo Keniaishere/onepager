@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>one page</title>
+    <title>Generative Logo</title>
     <style>
         * {
             margin: 0;
@@ -17,9 +17,59 @@
             width: 100%;
             background-color: #fff;
             padding: 2vh 4%;
-            display: flex;
-            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+    }
+
+    
+    html {
+            scroll-behavior: smooth;
         }
+
+        section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #fff;
+        }
+
+        .grid-section {
+            padding: 2vh 4%;
+        }
+
+        .text-section {
+            padding: 0 8%;
+            background-color: #f8f8f8;
+        }
+
+        .big-text {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 5vh;
+        }
+
+        .text-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .column p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
 
         .gif-grid {
             display: grid;
@@ -49,7 +99,7 @@
             .gif-item {
             height: 25vh;
         }
-        }
+    }
     </style>
 </head>
 <body>
@@ -70,6 +120,25 @@
 
             <!-- Add your other 11 GIFs here -->
         </div>
+        <section class="text-section">
+            <div class="big-text">
+                GENERATIVE<br>
+                IDENTITIES<br>
+                EXPLAINED
+            </div>
+            <div class="text-columns">
+                <div class="column">
+                    <h3>DYNAMIC</h3>
+                    <p>These identities showcase how brands create flexible, living systems that adapt and evolve while maintaining recognition.</p>
+                </div>
+                <div class="column">
+                    <h3>SYSTEMATIC</h3>
+                    <p>Built on carefully crafted algorithms and design systems, these logos respond to data and interaction in meaningful ways.</p>
+                </div>
+                <div class="column">
+                    <h3>AUTHENTIC</h3>
+                    <p>Unlike AI-generated content, these are intentionally designed systems that express genuine brand values and personality.</p>
+                </div>
     </div>
 </body>
 </html>
