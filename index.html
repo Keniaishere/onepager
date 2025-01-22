@@ -19,6 +19,7 @@
             padding: 2vh 4%;
             flex-direction: column;
             justify-content: center;
+    
     }
 
     
@@ -93,94 +94,67 @@
             transition: transform 0.3s ease;
         }
 
-        .generator-section {
-            min-height: 100vh;
-            padding: 40px;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .generator-box {
-        background-color: #f5f5f5;
-        border-radius: 8px;
-        padding: 40px;
-        width: 100%;
-        max-width: 1200px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .gradient-text {
+        background-image: linear-gradient(45deg, #ff0000, #00ff00);
+        background-size: 200% 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        transition: all 0.3s ease;
     }
 
-    .generator-title {
-        font-size: 2.5rem;
-        margin-bottom: 40px;
-        color: #333;
+    .jumping-mark {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        animation: sideJump 1.5s infinite ease-in-out;
+        position: relative;
     }
 
-    .generator-content {
-        display: grid;
-        grid-template-columns: 1fr 1.2fr 1fr;
-        gap: 40px;
-    }
-
-    .control-group {
-        margin-bottom: 30px;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        margin-bottom: 15px;
-        color: #333;
-    }
-
-    .radio-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .radio-group label {
+    .dynamic-text-section {
+        min-height: 100vh;
+        background-color: white;
         display: flex;
         align-items: center;
-        gap: 8px;
-        cursor: pointer;
+        justify-content: center;
+        padding: 2rem;
+        margin-bottom: 35vh;
     }
 
-    .temp-slider {
-        width: 100%;
-        margin: 10px 0;
+    .second-text {
+        margin-top: 0; /* Remove top margin for second section */
     }
 
-    .wind-dial {
-        aspect-ratio: 1;
-        background-color: #eee;
-        border-radius: 50%;
-        margin: 20px 0;
+    .dynamic-text-container {
+        max-width: 1400px;
+        margin: 0 auto;
     }
 
-    .logo-preview {
-        background-color: #444;
-        aspect-ratio: 1;
-        padding: 20px;
-        margin-bottom: 20px;
+    .dynamic-text {
+        font-size: 4vw;
+        line-height: 1.2;
+        font-weight: 500;
+        color: #666; /* Dark gray for regular text */
+        margin-bottom: 2rem;
     }
 
-    button {
-        padding: 12px 24px;
-        border-radius: 6px;
-        border: none;
-        background-color: #666;
-        color: white;
-        cursor: pointer;
-        font-size: 1rem;
+    .note {
+        font-size: 3vw; /* Slightly smaller for the note */
+        margin-top: 2rem;
     }
 
-    button:hover {
-        background-color: #555;
+    .highlight {
+        color: #000; /* Black for highlighted words */
+        font-weight: 600;
     }
 
-    .download-button {
-        width: 100%;
+
+    @keyframes sideJump {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(20px);
+        }
     }
 
     @media (max-width: 968px) {
@@ -189,9 +163,6 @@
             gap: 30px;
         }
         
-        .generator-box {
-            padding: 20px;
-        }
     }
 
         @media (max-width: 768px) {
@@ -202,11 +173,32 @@
                 font-size: 12vw;
             }
         }
+
+        @media (max-width: 768px) {
+        .dynamic-text {
+            font-size: 6vw;
+        }
+        .note {
+            font-size: 5vw;
+        }
+    }
     </style>
 </head>
 
 
 <body>
+    <section class="text-section">
+        <div class="big-text" id="generativeText">
+            <span class="gradient-text">WHAT IS A</span><br>
+            <span class="gradient-text">GENERATIVE</span><br>
+            <span class="gradient-text">LOGO</span><span class="jumping-mark">?</span>
+        </div>
+    </section>
+
+        </div>
+        </div>
+    </section>
+
     <div class="hero">
         <div class="gif-grid">
             <img src="https://raw.githubusercontent.com/Keniaishere/onepager/refs/heads/main/ocad-logo-generatif(1).gif" class="gif-item">
@@ -223,100 +215,63 @@
         <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/tvasahi.gif" class="gif-item">
 <!-- Add your other 11 GIFs here -->
         </div>
-            <section class="text-section">
-                <div class="big-text">
-                    WHAT IS A<br>
-                    GENERATIVE<br>
-                    LOGO?<br>
-        
-                </div>
-                <div class="text-columns">
-                    <div class="column">
-                        <h3>DYNAMIC</h3>
-                        <p>These dynamic logos showcase how brands create flexible, living identities through generative design systems.</p>
-                    </div>
-                    <div class="column">
-                        <h3>SYSTEMATIC</h3>
-                        <p>Not AI, but rather carefully crafted algorithms that respond to data, interaction, or other variables to create endless unique variations.</p>
-                    </div>
-                    <div class="column">
-                        <h3>RECOGNITION</h3>
-                        <p>While maintaining brand recognition, these systems allow for adaptable and evolving visual expressions of brand identity.</p>
-                    </div>
-                </div>
-            </section>
 
-            <section class="generator-section">
-                <div class="generator-box">
-                    <h1 class="generator-title">Logo generator</h1>
-        
-        <div class="generator-content">
-            <!-- Left Column -->
-            <div class="controls-column">
-                <div class="control-group">
-                    <h2>Language</h2>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="language" value="english" checked>
-                            English
-                        </label>
-                        <label>
-                            <input type="radio" name="language" value="german">
-                            German
-                        </label>
-                    </div>
+    
+        <section class="dynamic-text-section">
+            <div class="dynamic-text-container">
+                <div class="dynamic-text">
+                    <span class="highlight">Generative logos</span> are a 
+                    dynamic evolution of traditional static logos. Unlike static logos, which are fixed in design 
+                    and appearance, generative logos are <span class="highlight">flexible, 
+                    adaptive</span>, and can <span class="highlight">change their form, color, animation</span> based on 
+                    certain parameters or input.
                 </div>
+                    <!-- Second dynamic text section -->
+                    <section class="dynamic-text-section second-text">
+                        <div class="dynamic-text-container">
+                            <div class="dynamic-text">
+                                They are created using algorithms or design systems, allowing them to "move" or transform in response to factors like user interaction, data, or context. This makes them more interactive, modern, and capable of creating a unique experience each time they're seen, while still maintaining the core identity of the brand.
+                            </div>
 
-                <div class="control-group">
-                    <h2>Text</h2>
-                    <div class="radio-group">
-                        <label>
-                            <input type="radio" name="text-color" value="colored">
-                            Coloured (for light backgrounds)
-                        </label>
-                        <label>
-                            <input type="radio" name="text-color" value="white" checked>
-                            White (for dark backgrounds)
-                        </label>
-                    </div>
-                </div>
-
-                <div class="control-group">
-                    <h2>Temperature (colour)</h2>
-                    <input type="range" class="temp-slider" min="-30" max="30" value="30">
-                    <span class="temp-value">30 °C</span>
-                </div>
-
-                <button class="start-over">Start over</button>
-            </div>
-
-            <!-- Middle Column -->
-            <div class="wind-column">
-                <h2>Wind direction</h2>
-                <div class="wind-dial">
-                    <!-- Wind direction dial will be added here -->
+                <div class="dynamic-text note">
+                    <span class="highlight">It's important to note that generative logos are not inherently connected to artificial intelligence (AI).</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Right Column -->
-            <div class="preview-column">
-                <h2>Preview</h2>
-                <div class="logo-preview">
-                    <div class="logo-container">
-                        <!-- Logo SVG will go here -->
-                    </div>
-                </div>
-                <button class="download-button">Download image</button>
-            </div>
-        </div>
-                    
-                </div>
-            </section>
-
-                    <!-- new-->
-                    
-                </div>
-            </section>
+           
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gradientTexts = document.querySelectorAll('.gradient-text');
+            
+            document.addEventListener('mousemove', function(e) {
+                // Get mouse position relative to window
+                const mouseX = (e.clientX / window.innerWidth) * 100;
+                const mouseY = (e.clientY / window.innerHeight) * 100;
+                
+                 // Create diagonal gradient based on mouse position
+        gradientTexts.forEach(text => {
+            // Generate three colors for a richer gradient
+            const hue1 = (mouseX * 3.6); // 0-360 degrees
+            const hue2 = ((mouseX + mouseY) * 1.8) % 360;
+            const hue3 = (mouseY * 3.6);
+            
+            text.style.backgroundImage = `
+                linear-gradient(
+                    ${45 + (mouseX / 100 * 90)}deg,
+                    hsl(${hue1}, 70%, 50%),
+                    hsl(${hue2}, 70%, 50%),
+                    hsl(${hue3}, 70%, 50%)
+                )
+            `;
+            
+            // Move gradient position based on mouse
+            text.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
+        });
+    });
+});
+</script>
 </body>
 </html>
