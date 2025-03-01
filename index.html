@@ -12,6 +12,10 @@
             font-family: 'poppins', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .hero {
             height: 100vh;
             width: 100%;
@@ -19,15 +23,8 @@
             padding: 2vh 4%;
             flex-direction: column;
             justify-content: center;
-    
-    }
-
-    
-    html {
-            scroll-behavior: smooth;
         }
 
-       
         .grid-section {
             min-height: 100vh;
             padding: 2vh 4%;
@@ -52,9 +49,6 @@
             margin-bottom: 10vh;
         }
 
-    
-
-        /* Your existing grid styles remain the same */
         .gif-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -71,67 +65,200 @@
         }
 
         .gradient-text {
-        background-image: linear-gradient(45deg, #ff0000, #00ff00);
-        background-size: 200% 200%;
-        background-clip: text;
-        -webkit-background-clip: text;
-        color: transparent;
-        transition: all 0.3s ease;
-    }
+            background-image: linear-gradient(45deg, #ff0000, #00ff00);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transition: all 0.3s ease;
+        }
 
-    .jumping-mark {
-        display: inline-block;
-        transition: transform 0.3s ease;
-        animation: sideJump 1.5s infinite ease-in-out;
-        position: relative;
-    }
+        .jumping-mark {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            animation: sideJump 1.5s infinite ease-in-out;
+            position: relative;
+        }
 
-    .dynamic-text-section {
-        min-height: 100vh;
-        background-color: white;
+        .dynamic-text-section {
+            min-height: 100vh;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem;
+            margin-top: 15vh;
+        }
+
+        .dynamic-text-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .dynamic-text {
+            font-size: 4vw;
+            line-height: 1.2;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .highlight {
+            color: #000;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 2.5vw;
+            text-align: center;
+            color: #666;
+            font-weight: 400;
+            margin-top: -8vh;
+        }
+
+        .try-it-text {
+            font-size: 8vw;
+            font-weight: 700;
+            line-height: 1.1;
+            text-align: center;
+            color: black;
+        }
+
+        .interactive-logo-section {
+            padding: 64px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .generator-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Changed from 1fr 1.5fr 1fr */
+        gap: 32px;
+        background: #f8f9fa;
+        padding: 48px;
+        border-radius: 16px;
+        }
+
+        .controls-section {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5rem;
-        margin-top: 15vh;
+        flex-direction: column;
+        gap: 24px;
     }
 
-    .dynamic-text-container {
-        max-width: 1400px;
-        margin: 0 auto;
+    .preview-section {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
     }
 
-    .dynamic-text {
-        font-size: 4vw;
-        line-height: 1.2;
-        font-weight: 500;
-        color: #666; /* Dark gray for regular text */
-
-    }
-
-
-    .highlight {
-        color: #000; /* Black for highlighted words */
-        font-weight: 600;
-    }
-
-
-    @keyframes sideJump {
-        0%, 100% {
-            transform: translateX(0);
+        h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: #000;
         }
-        50% {
-            transform: translateX(20px);
-        }
-    }
 
-    @media (max-width: 968px) {
-        .generator-content {
-            grid-template-columns: 1fr;
-            gap: 30px;
+        .radio-option {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
         }
-        
-    }
+
+        .radio-option input[type="radio"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #007bff;
+            border-radius: 50%;
+            margin-right: 12px;
+            position: relative;
+        }
+
+        .radio-option input[type="radio"]:checked::after {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #007bff;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .radio-option label {
+            font-size: 16px;
+            color: #000;
+        }
+
+        .temperature-slider input {
+            width: 60%;
+            height: 4px;
+            background: #ddd;
+            border-radius: 2px;
+            appearance: none;
+            margin-bottom: 12px;
+        }
+
+        .temperature-value {
+            font-size: 16px;
+            color: #000;
+        }
+
+        .preview-content {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            color: #8B4513;
+        }
+
+        .nordkyn-text {
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .divider {
+            height: 2px;
+            background: currentColor;
+            margin: 8px auto;
+            width: 100%;
+        }
+
+        .tagline {
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .logo-shape {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .logo-shape svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .logo-shape polygon {
+            transition: all 0.3s ease;
+            fill: #8B4513;
+            opacity: 0.5;
+        }
+
+        @keyframes sideJump {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+        }
+
+        @media (max-width: 968px) {
+            .generator-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .interactive-logo-section {
+                padding: 32px;
+            }
+        }
 
         @media (max-width: 768px) {
             .text-columns {
@@ -140,51 +267,43 @@
             .big-text {
                 font-size: 12vw;
             }
+            .dynamic-text {
+                font-size: 6vw;
+            }
+            .subtitle {
+                font-size: 4vw;
+                margin-top: -4vh;
+            }
         }
-
-        @media (max-width: 768px) {
-        .dynamic-text {
-            font-size: 6vw;
-        }
-        .note {
-            font-size: 5vw;
-        }
-    }
     </style>
 </head>
-
-
 <body>
     <section class="text-section">
         <div class="big-text" id="generativeText">
-            <span class="gradient-text">WHAT IS A</span><br>
             <span class="gradient-text">GENERATIVE</span><br>
-            <span class="gradient-text">LOGO</span><span class="jumping-mark">?</span>
+            <span class="gradient-text">LOGOS:</span>
+        </div>
+        <div class="subtitle">
+            Visual identities that dynamically adjust to their contexts
         </div>
     </section>
-
-        </div>
-        </div>
-    </section>
-
+   
     <div class="hero">
         <div class="gif-grid">
             <img src="https://raw.githubusercontent.com/Keniaishere/onepager/refs/heads/main/ocad-logo-generatif(1).gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/Aoi.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/Brooklyn-Museum-1.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/designacademyeindhoven.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/edp1.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/expatcenter.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/idtv.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/imagine8.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/melbroune1.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/mitmedialab1.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/pantonehotel.gif" class="gif-item">
-        <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/tvasahi.gif" class="gif-item">
-<!-- Add your other 11 GIFs here -->
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/Aoi.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/Brooklyn-Museum-1.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/designacademyeindhoven.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/edp1.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/expatcenter.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/idtv.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/imagine8.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/melbroune1.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/mitmedialab1.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/pantonehotel.gif" class="gif-item">
+            <img src="https://raw.githubusercontent.com/Keniaishere/onepager/main/tvasahi.gif" class="gif-item">
         </div>
 
-    
         <section class="dynamic-text-section">
             <div class="dynamic-text-container">
                 <div class="dynamic-text">
@@ -197,57 +316,186 @@
             </div>
         </section>
 
-                    <!-- Second dynamic text section -->
-                    <section class="dynamic-text-section">
-                      <div class="dynamic-text-container">
-                          <div class="dynamic-text">
-                                They are created using algorithms or design systems, allowing them to "move" or transform in response to factors like user interaction, data, or context. This makes them more interactive, modern, and capable of creating a unique experience each time they're seen, while still maintaining the core identity of the brand.
-                            </div>
-                        </div>
-                    </section>
-
-                        <!-- Note section -->
-                        <section class="dynamic-text-section">
-                            <div class="dynamic-text-container">
-                                  <div class="dynamic-text">
-                    <span class="highlight">It's important to note that generative logos are not inherently connected to artificial intelligence (AI).</span>
+        <section class="dynamic-text-section">
+            <div class="dynamic-text-container">
+                <div class="try-it-text">
+                    Try it out yourself:
                 </div>
             </div>
         </section>
 
-           
-    </div>
+        <div class="interactive-logo-section">
+            <div class="generator-container">
+                <div class="controls-section">
+                    <h2>Language</h2>
+                    <div class="radio-option">
+                        <input type="radio" id="english" name="language" checked>
+                        <label for="english">English</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="deutsch" name="language">
+                        <label for="deutsch">Deutsch</label>
+                    </div>
+        
+                    <h2>Text</h2>
+                    <div class="radio-option">
+                        <input type="radio" id="colored" name="text-style" checked>
+                        <label for="colored">Coloured (for light backgrounds)</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="white" name="text-style">
+                        <label for="white">White (for dark backgrounds)</label>
+                    </div>
+        
+                    <h2>Temperature (colour)</h2>
+                    <div class="temperature-slider">
+                        <input type="range" min="-30" max="30" value="22" class="slider">
+                        <div class="temperature-value">22 °C</div>
+                    </div>
+                    </div>
+
+                <div class="preview-section">
+                    <h2>Preview</h2>
+                    <div class="preview-content">
+                        <div class="nordkyn-text">NORDKYN</div>
+                        <div class="divider"></div>
+                        <div class="tagline">
+                            WHERE<br>
+                            NATURE<br>
+                            RULES
+                        </div>
+                        <div class="logo-shape">
+                            <svg viewBox="0 0 800 800">
+                                <polygon points="360,100 360,400 620,250"></polygon>
+                                <polygon points="620,250 360,400 620,550"></polygon>
+                                <polygon points="360,700 360,400 620,550"></polygon>
+                                <polygon points="360,700 360,400 100,550"></polygon>
+                                <polygon points="100,250 360,400 100,550"></polygon>
+                                <polygon points="360,100 360,400 100,250"></polygon>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Gradient text effect
             const gradientTexts = document.querySelectorAll('.gradient-text');
             
             document.addEventListener('mousemove', function(e) {
-                // Get mouse position relative to window
                 const mouseX = (e.clientX / window.innerWidth) * 100;
                 const mouseY = (e.clientY / window.innerHeight) * 100;
                 
-                 // Create diagonal gradient based on mouse position
-        gradientTexts.forEach(text => {
-            // Generate three colors for a richer gradient
-            const hue1 = (mouseX * 3.6); // 0-360 degrees
-            const hue2 = ((mouseX + mouseY) * 1.8) % 360;
-            const hue3 = (mouseY * 3.6);
+                gradientTexts.forEach(text => {
+                    const hue1 = (mouseX * 3.6);
+                    const hue2 = ((mouseX + mouseY) * 1.8) % 360;
+                    const hue3 = (mouseY * 3.6);
+                    
+                    text.style.backgroundImage = `
+                        linear-gradient(
+                            ${45 + (mouseX / 100 * 90)}deg,
+                            hsl(${hue1}, 70%, 50%),
+                            hsl(${hue2}, 70%, 50%),
+                            hsl(${hue3}, 70%, 50%)
+                        )
+                    `;
+                    
+                    text.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
+                });
+            });
+
+            // Interactive logo controls
+            const tempSlider = document.querySelector('.slider');
+            const tempValue = document.querySelector('.temperature-value');
+            const windPointer = document.querySelector('.wind-pointer svg');
+            const logoPolygons = document.querySelectorAll('.logo-shape polygon');
+            const previewContent = document.querySelector('.preview-content');
+            const coloredRadio = document.getElementById('colored');
+            const whiteRadio = document.getElementById('white');
             
-            text.style.backgroundImage = `
-                linear-gradient(
-                    ${45 + (mouseX / 100 * 90)}deg,
-                    hsl(${hue1}, 70%, 50%),
-                    hsl(${hue2}, 70%, 50%),
-                    hsl(${hue3}, 70%, 50%)
-                )
-            `;
-            
-            // Move gradient position based on mouse
-            text.style.backgroundPosition = `${mouseX}% ${mouseY}%`;
-        });
+            // Text and background control
+            coloredRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    previewContent.style.backgroundColor = 'white';
+                    previewContent.style.color = '#8B4513';
+                    updateLogoColors(tempSlider.value);
+                }
+            });
+
+            whiteRadio.addEventListener('change', function() {
+                if (this.checked) {
+                    previewContent.style.backgroundColor = '#333';
+                    previewContent.style.color = 'white';
+                    logoPolygons.forEach(polygon => {
+                        polygon.style.fill = 'white';
+                    });
+                }
+            });
+
+            // Temperature control
+            function updateLogoColors(temperature) {
+    const temp = parseInt(temperature);
+    logoPolygons.forEach(polygon => {
+        if (temp < 0) {
+            // For cold temperatures - blue shades
+            const intensity = Math.abs(temp) / 30;
+            polygon.style.fill = `rgb(${Math.round(200 - intensity * 100)}, 
+                                 ${Math.round(220 - intensity * 100)}, 255)`;
+            polygon.style.opacity = 0.5;
+        } else {
+            // For warm temperatures - brown shades
+            const intensity = temp / 30;
+            polygon.style.fill = `rgb(139, ${Math.round(69 - intensity * 30)}, 
+                                 ${Math.round(19 - intensity * 10)})`;
+            polygon.style.opacity = 0.5;
+        }
     });
+}
+
+// Event listeners for radio buttons
+whiteRadio.addEventListener('change', function() {
+    if (this.checked) {
+        // Dark mode
+        previewContent.style.backgroundColor = '#333';
+        previewContent.style.color = 'white';
+        updateLogoColors(tempSlider.value); // Keep colored polygons
+    }
 });
-</script>
+
+coloredRadio.addEventListener('change', function() {
+    if (this.checked) {
+        // Light mode
+        previewContent.style.backgroundColor = 'white';
+        previewContent.style.color = '#8B4513';
+        updateLogoColors(tempSlider.value); // Keep colored polygons
+    }
+});
+
+
+            tempSlider.addEventListener('input', function() {
+                const temp = this.value;
+                tempValue.textContent = temp + ' °C';
+                updateLogoColors(temp);
+            });
+            
+        });
+        // Language switching function
+function updateLanguage() {
+    const tagline = document.querySelector('.tagline');
+    
+    if (deutschRadio.checked) {
+        tagline.innerHTML = 'WO<br>DIE NATUR<br>HERRSCHT';
+    } else {
+        tagline.innerHTML = 'WHERE<br>NATURE<br>RULES';
+    }
+}
+
+// Add event listeners for language radio buttons
+deutschRadio.addEventListener('change', updateLanguage);
+englishRadio.addEventListener('change', updateLanguage);
+
+
+    </script>
 </body>
 </html>
